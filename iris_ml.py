@@ -1,4 +1,4 @@
-#Guessing by giving different labels whether the flower is virginica or not
+#Guessing by giving different labels what type of flower(iris) is?
 from sklearn import datasets
 from sklearn.neighbors import KNeighborsClassifier
 
