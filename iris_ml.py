@@ -22,10 +22,24 @@ iris = datasets.load_iris()
 '''
 features = iris.data
 labels = iris.target
-print(features[0], labels[0])
+#print(features[0], labels[0])
 
 clf = KNeighborsClassifier()
 clf.fit(features, labels)
 
-preds = clf.predict([[31, 1, 1, 1]])
-print(preds)
+sl = int(input("Enter a sepal length(cm) : "))
+sw = int(input("Enter a sepal width(cm) : "))
+pl = int(input("Enter a petal length(cm) : "))
+pw = int(input("Enter a petal width(cm) : "))
+
+preds = clf.predict([[int(sl), int(sw), int(pl), int(pw)]])
+
+if preds == ([[0]]):
+    print("Iris Setosa")
+
+elif preds == ([[1]]):
+    print("Iris Versicolor")
+
+elif preds == ([[2]]):
+    print("Iris Virginica")
+
